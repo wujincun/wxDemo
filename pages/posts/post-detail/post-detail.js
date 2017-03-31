@@ -5,7 +5,6 @@ Page({
         isPlayingMusic:false
     },
     onLoad(option){
-        //let globalData = app.globalData;
         let postId = option.id;
         this.data.postId = postId;
         let postData = postsDetailData.postList[postId]
@@ -28,18 +27,28 @@ Page({
             postsCollected[postId] = false;
             wx.setStorageSync('posts_collected', postsCollected)
         }
+        if(app.globalData.g_isPlayingMusic && app.globalData.g_currentMusicPostId == this.data.postId){
+            this.setData({isPlayingMusic : true})
+        }
+        this.setMusicMonitor()
+    },
+
+    setMusicMonitor(){
         /*监听音乐*/
         wx.onBackgroundAudioPlay(()=>{
             this.setData({
                 isPlayingMusic:true
-            })
+            });
+            app.globalData.g_isPlayingMusic = true;
+            app.globalData.g_currentMusicPostId = this.data.postId;
         });
         wx.onBackgroundAudioPause(()=>{
             this.setData({
                 isPlayingMusic:false
-            })
+            });
+            app.globalData.g_isPlayingMusic = false;
+            app.globalData.g_currentMusicPostId = null;
         });
-
     },
     onCollectionTap(event){
         let postsCollected = wx.getStorageSync('posts_collected');

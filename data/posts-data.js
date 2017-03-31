@@ -34,9 +34,9 @@ var local_dataBase = [
         avatar:'/images/avatar/clock.png',
         detail:'王者荣耀好玩吗，反正很多人玩',
         music:{
-            dataUrl:'http://ac-5g9r20ds.clouddn.com/e54ad7f0a834b9c07ec6.mp3',
-            title:'不知道',
-            coverImgUrl:'http://ac-5g9r20ds.clouddn.com/63bedb5f584234b6827c.jpg'
+            dataUrl: "http://ws.stream.qqmusic.qq.com/C100003507bR0gDKBm.m4a?fromtag=38",
+            title: "夜夜夜夜-齐秦",
+            coverImgUrl: "http://y.gtimg.cn/music/photo_new/T002R150x150M000001TEc6V0kjpVC.jpg?max_age=2592000"
         }
     }
 ];
