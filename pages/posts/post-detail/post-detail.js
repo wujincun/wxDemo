@@ -8,6 +8,7 @@ Page({
         let postId = option.id;
         this.data.postId = postId;
         let postData = postsDetailData.postList[postId]
+        //this.data.postData = postData  异步加载的数据
         this.setData({
             postData: postData
         });
